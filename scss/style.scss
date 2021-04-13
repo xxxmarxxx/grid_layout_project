@@ -1,9 +1,61 @@
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-.grid{
+// 3  columny i 4 wiersze
+
+.grid {
   display: grid;
+  grid-template-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas:
+    "logo search menu"
+    "images images images"
+    "contact contact contact"
+    "footer footer footer";
+  // kontener
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.logo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: rgb(96, 173, 176);
+  height: 100px;
+}
+
+.search {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-color: rgb(211, 154, 7);
+}
+
+.menu {
+  grid-column: -1/-2;
+  grid-row: 1/2;
+  background-color: rgb(167, 167, 167);
+}
+
+.gallery {
+  grid-column: 1/-1;
+  grid-row: 2;
+  background-color: rgb(230, 144, 116);
+}
+
+.contact {
+  grid-area: 3/1/4/-1;
+  height: 60px;
+  background-color: rgb(43, 148, 252);
+}
+
+.footer {
+  grid-area: footer/footer/footer/footer;
+  height: 100px;
+  background-color: rgb(213, 165, 45);
 }

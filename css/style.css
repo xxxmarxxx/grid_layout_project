@@ -9,5 +9,63 @@ body {
 .grid {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
+      grid-template-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
+  -ms-grid-rows: auto 1fr auto auto;
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-areas: "logo search menu" "images images images" "contact contact contact" "footer footer footer";
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.logo {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: #60adb0;
+  height: 100px;
+}
+
+.search {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  background-color: #d39a07;
+}
+
+.menu {
+  grid-column: -1/-2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  background-color: #a7a7a7;
+}
+
+.gallery {
+  grid-column: 1/-1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  background-color: #e69074;
+}
+
+.contact {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-area: 3/1/4/-1;
+  height: 60px;
+  background-color: #2b94fc;
+}
+
+.footer {
+  grid-area: footer/footer/footer/footer;
+  height: 100px;
+  background-color: #d5a52d;
 }
 /*# sourceMappingURL=style.css.map */
